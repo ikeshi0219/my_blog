@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     redirect_to @post, notice: "ブログを登録しました。" # showページにリダイレクト
     else
       render :new
-
     end
   end
 
@@ -43,7 +42,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :category_id)
   end
 
   def set_post
